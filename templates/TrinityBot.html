@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dialogflow Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='TrinityBot.css') }}">
+  </head>
+  <body>
+    <div class="chatbox" style="background-color: lightblue;">
+      <h1>Dialogflow Bot</h1>
+      <div class="chatlogs"> 
+      </div>
+      <form id="query-form">
+        <input type="text" id="query-input" placeholder="Enter your query">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script src="{{ url_for('static', filename='TrinityBot.js') }}"></script>
+  </body>
+</html>
