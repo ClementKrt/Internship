@@ -14,6 +14,17 @@
         <button type="submit">Send</button>
       </form>
     </div>
+
+    <div class = "evaluation">
+      <h1>Answer Evaluation</h1>
+      <div id="query-text"></div>
+      <div id="query-evaluation"></div>
+      <div id="query-confidence"></div>
+      <div id="query-intent"></div>
+      <div id = "intent-answers"></div>
+      <button type="correct">Correct Answer</button>
+      
+    </div>
     <script src="{{ url_for('static', filename='TrinityBot.js') }}"></script>
   </body>
 </html>

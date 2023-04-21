@@ -1,5 +1,12 @@
 const form = document.querySelector('#query-form');
 const input = document.querySelector('#query-input');
+var queryevaluation = document.getElementById("query-evaluation");
+var queryintent = document.getElementById("query-intent");
+var queryconfidence = document.getElementById("query-confidence");
+var querytext = document.getElementById("query-text");
+var queryaction = document.getElementById("query-action");
+var intentanswers = document.getElementById("intent-answers");
+
 const chatlogsContainer = document.querySelector('.chatlogs');
 
 form.addEventListener('submit', (event) => {
@@ -18,6 +25,17 @@ form.addEventListener('submit', (event) => {
     // Display the response from the Flask app
     const response = JSON.parse(xhr.responseText);
     const botResponse = response.fulfillmentText;
+
+    queryevaluation.innerHTML = "Answer : " + response.fulfillmentText;
+    if(response.intentName == response.action){
+      queryintent.innerHTML = "Detected intent : " + response.intentName
+    }else{
+      queryintent.innerHTML = "Detected intent : " + response.intentName  + response.action;
+    }
+    querytext.innerHTML = "Question : " + response.text;
+    queryconfidence.innerHTML = "Confidence score : " + Math.floor(response.confidence*100) + "%";
+
+    intentanswers.innerHTML = "Possible answers : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +  response.intentanswer.replace(/["'\\\[\]]/g, '').replace(/[,]/g,"<br>&nbsp;&nbsp;&nbsp;&nbsp;").replace(/[ù]/,",").replace(/[+]/,"'");
     const userQuery = query;
     
     const chatLogLeft = document.createElement('div');
@@ -58,3 +76,5 @@ form.addEventListener('submit', (event) => {
   // Clear the input field
   input.value = '';
 });
+
+

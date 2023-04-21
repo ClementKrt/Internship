@@ -60,6 +60,7 @@
   padding-top:5px;
   padding-bottom: 5px;
   border: 1px solid #0c0c0c;
+  overflow: hidden;
 
 }
 
@@ -71,6 +72,7 @@
   padding-top:5px;
   padding-bottom: 5px;
   border: 1px solid #0c0c0c;
+  overflow: hidden;
 
   
 }
@@ -97,6 +99,7 @@ input[type="text"] {
   font-size: 16px;
   margin-right: 5px;
   text-align: left;
+  overflow: hidden;
 }
 
 button[type="submit"] {
@@ -114,6 +117,69 @@ button[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
+.evaluation {
+  
+  margin-top: 50px;
+  margin-left: 25%;
+  height: 70vh;
+  width: 50%;
+  
+  background-color: lightblue;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.evaluation h1 {
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  margin: 10px 10px;
+  border-bottom: 1px solid  #000000;
+}
+
+#query-text, #query-evaluation, #query-confidence, #query-intent, #intent-answers{
+  padding: 10px;
+  font-size: 20px;
+  color: #000000;
+  margin: 20px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #e6e4e4e7;
+  overflow: hidden;
+  }
+
+  
+  button[type="correct"] {
+    width: 15%;
+    background-color: #00b606;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  
+  button[type="correct"]:hover {
+    background-color: #00b606;
+  }
+  button[type="incorrect"] {
+    width: 30%;
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+ 
+  }
+  
+  button[type="incorrect"]:hover {
+    background-color: #ff0000;
+  }
 @media (min-width: 768px) {
   .chatbox {
     width: 50%;
